@@ -1,0 +1,1 @@
+import("cube.stl", convexity=3)
