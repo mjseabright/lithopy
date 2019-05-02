@@ -53,6 +53,7 @@ def main():
 				cube.vectors[faceCounter, 0] = verticies[i]
 				cube.vectors[faceCounter, 1] = verticieMid
 				cube.vectors[faceCounter, 2] = verticies[(i + 1) % 4]
+				cube.normals[faceCounter] = [0,1,0]
 				faceCounter += 1
 
 	# Back
@@ -68,6 +69,7 @@ def main():
 				cube.vectors[faceCounter, 0] = verticies[(i * 2)]
 				cube.vectors[faceCounter, 1] = verticies[((i * 2) + 1) % 4]
 				cube.vectors[faceCounter, 2] = verticies[((i * 2) + 2) % 4]
+				cube.normals[faceCounter] = [0,-1,0]
 				faceCounter += 1
 
 	# Top
@@ -82,6 +84,7 @@ def main():
 			cube.vectors[faceCounter, 0] = verticies[(i * 2)]
 			cube.vectors[faceCounter, 1] = verticies[((i * 2) + 1) % 4]
 			cube.vectors[faceCounter, 2] = verticies[((i * 2) + 2) % 4]
+			cube.normals[faceCounter] = [0,0,1]
 			faceCounter += 1
 
 	# Bottom
@@ -96,6 +99,7 @@ def main():
 			cube.vectors[faceCounter, 0] = verticies[(i * 2)]
 			cube.vectors[faceCounter, 1] = verticies[((i * 2) + 1) % 4]
 			cube.vectors[faceCounter, 2] = verticies[((i * 2) + 2) % 4]
+			cube.normals[faceCounter] = [0,0,-1]
 			faceCounter += 1
 
 	# Left
@@ -110,6 +114,7 @@ def main():
 			cube.vectors[faceCounter, 0] = verticies[(i * 2)]
 			cube.vectors[faceCounter, 1] = verticies[((i * 2) + 1) % 4]
 			cube.vectors[faceCounter, 2] = verticies[((i * 2) + 2) % 4]
+			cube.normals[faceCounter] = [-1,0,0]
 			faceCounter += 1
 
 	# Right
@@ -124,8 +129,8 @@ def main():
 			cube.vectors[faceCounter, 0] = verticies[(i * 2)]
 			cube.vectors[faceCounter, 1] = verticies[((i * 2) + 1) % 4]
 			cube.vectors[faceCounter, 2] = verticies[((i * 2) + 2) % 4]
+			cube.normals[faceCounter] = [1,0,0]
 			faceCounter += 1
-
 
 	print(faceCounter, cube.vectors.shape[0])
 	cube.save('probsWrong.stl')
